@@ -21,3 +21,9 @@ npm i && npm run dev
 ```
 
 This will start the server on `localhost:3139`
+
+## Sample Email
+
+This is how the email body will look like:
+
+![Sample email](./src/assets/images/sample-email.png)
