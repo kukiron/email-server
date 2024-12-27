@@ -1,0 +1,16 @@
+[functions]
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+  included_files = ["src/**"] # Add required files explicitly
+
+[build]
+  functions = "src/functions" # Location for serverless functions
+  publish = "src/assets" # Location for static assets - not in use
+  command="echo Building Functions"
+
+# Redirect all requests to the serverless function
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"
