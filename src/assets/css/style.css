@@ -4,6 +4,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   background: url("/images/background-image.png") repeat center center fixed;
+  height: 100%;
 }
 
 body,
@@ -20,6 +21,7 @@ p {
 .container {
   margin: 30px auto;
   text-align: center;
+  height: 100%;
 }
 h1 {
   font-weight: 300;
@@ -28,9 +30,8 @@ h1 {
 
 .logo {
   margin: 0 auto;
-  width: 250px;
+  width: 400px;
   height: auto;
-  margin: 1rem;
 }
 
 .welcome {
