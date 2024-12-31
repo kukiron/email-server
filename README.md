@@ -22,8 +22,16 @@ npm i && npm run dev
 
 This will start the server on `localhost:3139`
 
-## Sample Email
+## Endpoints
 
-This is how the email body will look like:
+`GET /api/contact-us`: Route to test the contact us form submission.
 
-![Sample email](./src/assets/images/sample-email.png)
+`POST /api/send-message`: Route to send email message.
+
+## Implementation
+
+| Name | Screenshot |
+| --- | --- |
+| Contact Us Form | ![Sample email](./src/assets/images/contact-us_form.png) |
+| Form Submission Email | ![Sample email](./src/assets/images/form_submission.png) |
+|  |  |
