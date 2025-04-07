@@ -1,6 +1,6 @@
-import express from 'express';
 import path from 'path';
 import cors from 'cors';
+import express from 'express';
 import morgan from 'morgan';
 
 import 'dotenv/config';
@@ -28,17 +28,17 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cors()); // enable for experimental purposes
 // CORS configuration - allow only requests from a specific domain
 app.use(
-  cors({
-    methods: ['POST', 'GET'],
-    allowedHeaders: ['Content-Type', 'Accept'],
-    origin: process.env.ALLOWED_DOMAIN,
-    optionsSuccessStatus: 200,
-  })
+	cors({
+		methods: ['POST', 'GET'],
+		allowedHeaders: ['Content-Type', 'Accept'],
+		origin: process.env.ALLOWED_DOMAIN,
+		optionsSuccessStatus: 200,
+	}),
 );
 
 // Sample welcome page
 app.get('/', (_req, res) => {
-  res.render('index', { title: 'Email Server' });
+	res.render('index', { title: 'Email Server' });
 });
 
 // ----- Routes ----- //
@@ -46,7 +46,7 @@ app.use('/api', routes);
 
 // start server
 app.listen(port, () => {
-  console.log(`CORS-enabled web server listening on http://localhost:${port}`);
+	console.log(`CORS-enabled web server listening on http://localhost:${port}`);
 });
 
 export default app;

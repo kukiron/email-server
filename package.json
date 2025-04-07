@@ -8,12 +8,15 @@
     "url": "https://github.com/kukiron/email-server"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf ./build && tsc",
+    "clean": "rm -rf ./build",
+    "copy": "cp -r ./src/views ./build/views && cp -r ./src/assets ./build/assets",
+    "build:ts": "tsc --incremental false",
+    "build": "npm run clean && npm run build:ts && npm run copy",
     "dev": "npx nodemon",
-    "start": "npm run build && node build/server.ts",
-    "lint": "eslint --max-warnings 0 src",
-    "format": "eslint --max-warnings 0 src --fix"
+    "start": "npm run build && node build/server.js",
+    "lint": "npx @biomejs/biome lint --write ./src",
+    "format": "npx @biomejs/biome format --write ./src",
+    "check": "npx @biomejs/biome check --write ./src"
   },
   "keywords": [
     "express",
@@ -36,6 +39,7 @@
     "validator": "^13.12.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/cors": "^2.8.17",
     "@types/ejs": "^3.1.5",
     "@types/express": "^5.0.0",
@@ -43,13 +47,7 @@
     "@types/node": "^22.9.3",
     "@types/nodemailer": "^6.4.17",
     "@types/validator": "^13.12.2",
-    "@typescript-eslint/eslint-plugin": "^8.15.0",
-    "@typescript-eslint/parser": "^8.15.0",
-    "eslint": "^8",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
     "nodemon": "^3.1.7",
-    "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }
