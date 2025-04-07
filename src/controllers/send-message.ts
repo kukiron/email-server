@@ -3,6 +3,7 @@ import ejs from 'ejs';
 import type { Request, Response } from 'express';
 
 import {
+	COMPANY_NAME,
 	createTransporter,
 	isPhoneIncluded,
 	validateEmail,
@@ -34,6 +35,7 @@ export const sendEmail = async (req: Request, res: Response) => {
 			name: validateName(name),
 			email: validateEmail(email),
 			message: validateMessage(message),
+			companyName: COMPANY_NAME,
 		});
 
 		// Define the email options
